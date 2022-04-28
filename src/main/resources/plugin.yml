@@ -1,0 +1,49 @@
+name: TFBBuildffa8
+version: '${project.version}'
+main: me.koba1.tfbbuildffa8.Main
+authors: [ kbalu ]
+description: TFBBuildFFA 1.8
+depend:
+  - ChatManager
+
+commands:
+  slotselector:
+    aliases: [ tárgyválasztó, slotválasztó, helyválasztó, slotselection, slotselect ]
+  stats:
+    aliases: [ statok, stat, statisztikáid, statisztika, statisztikád ]
+  shop:
+    aliases: [ bolt ]
+  buildffa:
+    aliases: [ bffa ]
+  spawn:
+  hub:
+    aliases: [ lobby ]
+
+permissions:
+  buildffa.*:
+    default: op
+    children: [ buildffa.balance.add, buildffa.balance.take, buildffa.balance.set, buildffa.dropitem.bypass, buildffa.inventory.bypass, buildffa.balance.get, buildffa.placeblock, buildffa.pvpcommand.bypass ]
+  buildffa.balance.add:
+    children: [ buildffa.balance ]
+    default: op
+  buildffa.balance.take:
+    children: [ buildffa.balance ]
+    default: op
+  buildffa.balance.set:
+    children: [ buildffa.balance ]
+    default: op
+  buildffa.balance.get:
+    children: [ buildffa.balance ]
+    default: op
+  buildffa.dropitem.bypass:
+    children: [ buildffa.bypasses ]
+    default: op
+  buildffa.inventory.bypass:
+    children: [ buildffa.bypasses ]
+    default: op
+  buildffa.placeblock:
+    default: op
+  buildffa.getitems:
+    default: op
+  buildffa.gamemode.bypass:
+    default: op
